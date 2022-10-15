@@ -1,0 +1,20 @@
+<div class="row">
+  <% @restaurants.each do | restaurant| %>
+        <div class="col-sm-3">
+          <div class="card mb-5">
+            <img src="https://source.unsplash.com/500x500/?<%= restaurant.category %>, food" class="card-img-top" alt="<%= restaurant.category %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= restaurant.name %></h5>
+            <p class="card-text"><strong>Address: </strong><%= restaurant.address %></p>
+            <p class="card-text"><strong>Category: </strong><%= restaurant.category.capitalize %></p>
+            <p class="card-text"><strong>Phone: </strong><%= restaurant.phone_number %></p>
+            <div class="mt-5 d-flex justify-content-around align-items-center">
+              <%= link_to('Details', restaurant, class: 'btn btn-primary') %>
+              <%= link_to('Review',  new_restaurant_review_path(restaurant), class: 'btn btn-warning text-white') %>
+              <%= link_to('Remove', restaurant, class: 'btn btn-danger') %>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>

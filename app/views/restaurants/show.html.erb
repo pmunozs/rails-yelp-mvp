@@ -1,0 +1,12 @@
+<div class="card mb-3">
+  <div class="card">
+    <img src="https://source.unsplash.com/960x960/?<%= @restaurant.category %>, food" class="card-img-top" alt="<%= @restaurant.category %>">
+    <div class="card-body">
+      <h5 class="card-title"><%= @restaurant.name %></h5>
+      <p class="card-text"><strong>Address: </strong><%= @restaurant.address %></p>
+      <p class="card-text"><strong>Category: </strong><%= @restaurant.category.capitalize %></p>
+      <p class="card-text"><strong>Phone: </strong><%= @restaurant.phone_number %></p>
+    </div>
+  </div>
+</div>
+<%= link_to('Go back', root_path) %>
